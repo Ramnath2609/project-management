@@ -18,10 +18,14 @@ app.use(express.static(path.join(__dirname, "../client/build")));
 
 // app.use(express.json());
 
-app.use("/graphql", graphqlHTTP({
+app.post("/graphql", graphqlHTTP({
   schema,
   graphiql: process.env.NODE_ENV === 'development'
 }))
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+})
 
 app.listen(PORT, () => {
   console.log("Server running on port ", PORT);
