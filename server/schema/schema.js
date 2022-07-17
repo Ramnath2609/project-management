@@ -117,6 +117,8 @@ const mutation = new GraphQLObjectType({
   }
 })
 
+//Query
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {

@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 require("dotenv").config({ path: '../.env' });
 const { graphqlHTTP } = require("express-graphql")
@@ -12,6 +13,8 @@ connect();
 const app = express();
 
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 // app.use(express.json());
 

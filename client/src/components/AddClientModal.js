@@ -36,7 +36,7 @@ export default function AddClientModal() {
         type='button'
         className='btn btn-secondary'
         data-bs-toggle='modal'
-        data-bs-target='#addClientModal'
+        data-bs-target='#addClient'
       >
         <div className='d-flex align-items-center'>
           <FaUser className='icon' />
